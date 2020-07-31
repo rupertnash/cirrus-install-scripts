@@ -9,4 +9,6 @@ if [ -z "$INSTALLER_ENV_SH" ]; then
     if [[ ! "$MODULEPATH" =~ ".*$mod_dir.*" ]]; then
 	module use $mod_dir
     fi
+
+    export make_parallelism=8
 fi
