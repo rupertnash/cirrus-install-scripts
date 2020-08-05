@@ -6,7 +6,7 @@ if [ -z "$INSTALLER_ENV_SH" ]; then
     export base_dir=/lustre/home/shared/nash
     export app_dir=$base_dir/sw
     export mod_dir=$base_dir/modules
-    if [[ ! "$MODULEPATH" =~ ".*$mod_dir.*" ]]; then
+    if ! module is-used /lustre/home/shared/nash/modules; then
 	module use $mod_dir
     fi
 

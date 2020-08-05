@@ -7,6 +7,10 @@ set -e
 thisdir=$(readlink -f $(dirname $BASH_SOURCE))
 . $thisdir/env.sh
 
-pushd $build_dir_name
-cmake --install .
-popd
+mkdir -p $prefix/include
+
+if [ -d $prefix/include/CL ]; then
+   rm -r $prefix/include/CL
+fi
+
+cp -r OpenCL-Headers/CL $prefix/include/

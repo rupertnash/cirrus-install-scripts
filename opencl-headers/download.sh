@@ -7,6 +7,4 @@ set -e
 thisdir=$(readlink -f $(dirname $BASH_SOURCE))
 . $thisdir/env.sh
 
-pushd $build_dir_name
-cmake --install .
-popd
+git clone https://github.com/KhronosGroup/OpenCL-Headers.git

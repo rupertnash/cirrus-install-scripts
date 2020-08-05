@@ -8,5 +8,5 @@ thisdir=$(readlink -f $(dirname $BASH_SOURCE))
 . $thisdir/env.sh
 
 pushd $build_dir_name
-cmake --install .
+cmake --build . -j $make_parallelism
 popd

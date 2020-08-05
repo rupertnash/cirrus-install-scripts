@@ -10,13 +10,12 @@ if [ "$SLURM_JOB_QOS" != "gpu" ]; then
 fi
 
 set -e
-
 thisdir=$(readlink -f $(dirname $BASH_SOURCE))
-. $thisdir/../env.sh
+. $thisdir/../../env.sh
 
-version=$(bash -c '. env.sh; echo $version;')
-module load sycl/$version
+version=$(bash -c ". $thisdir/env.sh; echo \$version;")
+module load sycl/nvidia/$version
 
-clang++ -fsycl -fsycl-targets=nvptx64-nvidia-cuda-sycldevice $thisdir/testprog.cpp -o testprog
+clang++ -fsycl -fsycl-targets=nvptx64-nvidia-cuda-sycldevice $thisdir/../testprog.cpp -o testprog-nvidia
 
-./testprog
+./testprog-nvidia
