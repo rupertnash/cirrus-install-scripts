@@ -24,4 +24,6 @@ python3 $source_dir/buildbot/configure.py \
 	--cmake-opt=-DCMAKE_INSTALL_PREFIX=$prefix \
 	--cmake-opt=-DSYCL_EXTERNAL_PROJECTS_SKIP_AUTO_UPDATE=ON \
 	--cmake-opt=-DOpenCL_INCLUDE_DIR=$OpenCL_INCLUDE_DIR \
-	--cmake-opt=-DOpenCL_LIBRARY=$OpenCL_LIBRARY
+	--cmake-opt=-DOpenCL_LIBRARY=$OpenCL_LIBRARY \
+	--cmake-opt=-DLEVEL_ZERO_INCLUDE_DIR=$LEVEL_ZERO_DIR/include \
+	--cmake-opt=-DLEVEL_ZERO_LIBRARY=$LEVEL_ZERO_DIR/lib64/libze_loader.so

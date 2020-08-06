@@ -19,4 +19,5 @@ if [ -z "$INSTALLER_SYCL_ENV_SH" ]; then
     module load ninja/1.10.0
     module load opencl-headers/master
     module load opencl-icd-loader/master
+    module load level-zero/v0.91.21
 fi

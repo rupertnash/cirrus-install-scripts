@@ -9,7 +9,6 @@ thisdir=$(readlink -f $(dirname $BASH_SOURCE))
 
 $thisdir/../download.sh
 sbatch --wait $thisdir/backend.sh $thisdir/configure.sh
-$thisdir/extra-download.sh
 sbatch --wait $thisdir/backend.sh $thisdir/build.sh
 $thisdir/module.sh
 sbatch --wait $thisdir/backend.sh $thisdir/test.sh
