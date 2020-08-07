@@ -6,7 +6,7 @@ fi
 
 if [ "$SLURM_JOB_QOS" != "gpu" ]; then
     echo "This has to be run on the GPU nodes"
-    return 1
+    exit 1
 fi
 
 set -e

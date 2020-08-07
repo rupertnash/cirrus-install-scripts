@@ -9,7 +9,7 @@
 script=$1
 if [ ! -x $script ]; then
     echo "Actual script ($script) to run not given/present/executable"
-    return 1
+    exit 1
 fi
 
 export TMPDIR=/dev/shm/$SLURM_JOB_ID
